@@ -179,7 +179,7 @@ h2 strong {
     width: 100%;
     height: 100%;
     content: '';
-    background-image: linear-gradient(11deg, #291342 0%, #c60242 100%);
+    background-image: linear-gradient(11deg, #6ec1e4 0%, #54595f 100%);
     z-index: -1;
     transition: all .5s ease-in-out;
     border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
@@ -195,7 +195,7 @@ h2 strong {
 }
 
 .about-image:hover::before {
-    filter: drop-shadow(0 0 30px rgba(223, 59, 13, 0.8));
+    filter: drop-shadow(0 0 30px rgba(130, 237, 255, 0.97));
 }
 
 /* ======== Style For Resume Section ======== */
