@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*======== Using Css Custom Variables =========*/
+
+body.dark {
+    --bg-color1: #0b0f19;
+    --bg-color2: #1c1e2a;
+    --color1: #FFF;
+    --color2: #DDD;
+}
+
+body:not(.dark) {
+    --bg-color1: #fbfdff;
+    --bg-color2: #f5f5f5;
+    --color1: #3e4455;
+    --color2: #000;
+}
+
+/*======= Universal CSS Properties =======*/
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color1);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--color1);
+    font-weight: 600;
+    text-align: center;
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: var(--color1);
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    color: var(--color1);
+}
+
+p strong {
+    font-weight: 500;
+    color: var(--color2);
+}
+
+
+img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========== Dark And Light Mode Toggle ======== */
+
+.theme-toggle {
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    right: 0;
+    border: none;
+    background-color: var(--color2);
+}
+
+body:not(.dark) .theme-toggle .lni-night,
+body.dark .theme-toggle .lni-sun {
+    cursor: pointer;
+    color: var(--bg-color2);
+    padding: 10px 10px;
+    display: block;
+    font-size: 1.25rem;
+}
+
+body:not(.dark) .theme-toggle .lni-sun {
+    display: none;
+
+}
+
+body.dark .theme-toggle .lni-night {
+    display: none;
+}
+
+/*========= Navigation Link When Scroll Active =======*/
+
+.portfolio-navbar ul li a.active-link {
+    font-weight: 800;
+}
+
+/*======== CSS Header Stick To Top =========*/
+
+header.header-sticky {
+    position: fixed;
+    background-color: #f5f5f5;
+    z-index: 2000;
+    transition: .4s;
+    box-shadow: 0 4px 6px 0 rgba(12, 0, 46, 0.05);
+}
+
+.header-sticky .brand-name a {
+    color: #3e4455;
+}
+
+.header-sticky .navbar-toggle i {
+    color: #3e4455;
+}
+
+.header-sticky .portfolio-navbar ul li a {
+    color: #343434;
+}
+
+
+/* ======= Wraper ======== */
+
+.portfolio-container {
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.portfolio-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*========== Styling Navigation Bar ========*/
+
+
+/*========== Responsive Navigation Menu =======*/
+
+
+/* ========= Style For About Section ======== */
+
+
+/*======== CSS Main Heading =======*/
+
+h1 strong,
+h2 strong {
+    background-image: linear-gradient(to right, #977ec7 0%, #f987d6 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/*=========== Style For About Image ==========*/
+
+.about-image::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: linear-gradient(11deg, #291342 0%, #c60242 100%);
+    z-index: -1;
+    transition: all .5s ease-in-out;
+    border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
+    box-shadow: 2px 10px 0px 0px rgba(216, 19, 19, 0.16);
+}
+
+.about-image:hover {
+    transform: translateY(-10.5px);
+}
+
+.about-image img {
+    border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
+}
+
+.about-image:hover::before {
+    filter: drop-shadow(0 0 30px rgba(223, 59, 13, 0.8));
+}
+
+/* ======== Style For Resume Section ======== */
+
+
+/*========= Resume Intro ======*/
+
+
+/*========== Hello Button ===========*/
+
+
+/*========= Style For Resume Body =========*/
+
+.btn {
+    position: relative;
+    padding: 0 10px;
+    background-color: #d5d5d5;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    line-height: 40px;
+    color: #000;
+    cursor: pointer;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
+    transition: .4s;
+}
+
+.btn:not(:last-child) {
+    margin-right: 15px;
+}
+
+.btn:hover,
+.btn.active {
+    background-color: #4d63dd;
+    color: #FFF;
+}
+
+/* ========== Style For Resume Tab ========== */
+
+.resume-tab {
+    display: none;
+}
+
+.resume-tab.active {
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*========== Style For Skills Bar Progress ==========*/
+
+.bar-content {
+    margin-bottom: 15px;
+}
+
+.bar-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.bar-title,
+.bar-percentage {
+    color: var(--color1);
+}
+
+.bar-progress {
+    display: flex;
+    background-color: #e9eeef;
+    height: 8px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    width: 0;
+    display: flex;
+    position: relative;
+    transition-delay: 0s;
+    transition-delay: 1.5s;
+    background-color: #75a9d6;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.resume-tab.active .progress-bar {
+    animation: progress 1500ms ease-in 1;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+}
+
+/*========== Style For Services Section ========*/
+
+
+/*========= Style For Project Section ============*/
+
+
+/*========= Portfolio Gallery =========*/
+
+
+.portfolio-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio-item.show {
+    animation: fadeIn 4.5s ease;
+}
+
+.portfolio-item.hide {
+    display: none;
+}
+
+
+.portfolio-item-content {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    right: 25px;
+    bottom: 25px;
+    background-color: rgba(16, 16, 16, .5);
+    transition: .5s;
+    transform: scale(1.15);
+    opacity: 0;
+}
+
+
+/*========= Style For Contact Section =============*/
+
+
+/*======== Style For Contact General ==========*/
+
+
+/* ======= Style For Contact Form ======== */
+
+#contact-form {
+    margin: 2rem auto;
+}
+
+#contact-form label {
+    margin-bottom: 5px;
+    color: var(--color1);
+}
+
+.name-email {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.input-control,
+.contact-msg {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #f6f6f9;
+    border: 1.5px solid #f6f6f9;
+    border-radius: 5px;
+    color: #3e4455;
+    height: 50px;
+    line-height: 56px;
+    outline: 0;
+    padding: 0 30px;
+    width: 100%;
+    font-weight: 500;
+}
+
+.contact-msg {
+    height: 150px;
+    line-height: 1.2;
+    padding: 20px 30px;
+    resize: none;
+}
+
+.input-subject,
+.form-submit {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px 30px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ff5252;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+/* ========= Message After Form Submission =======*/
+
+.loader {
+    width: 100%;
+    padding: 10px;
+    background-color: #3d4145;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.loader.show {
+    display: block;
+}
+
+.loader i {
+    animation: rotateme .4s linear infinite;
+    color: var(--color2);
+}
+
+/*============ Loader animation =========*/
+
+@keyframes rotateme {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form-message {
+    display: none;
+    width: 100%;
+    background-color: #3d4145;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-message.show {
+    display: block;
+}
+
+.success-msg {
+    color: green;
+    line-height: 3;
+}
+
+.error-msg {
+    color: red;
+    line-height: 3;
+}
+
+/*======= CSS For Footer Section =========*/
+
+
+/*---------------- Large devices (desktops, 992px and up)  -----------*/
+
+@media (min-width: 768px) {
+
+    /*======= Responsive Universal CSS Properties =======*/
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        text-align: unset;
+        color: var(--color1);
+        font-weight: 600;
+    }
+
+    /*========= Header Responsive ===========*/
+
+
+    /*========= Slider Responsive =========*/
+
+
+    /*========= Slider Image Responsive ========*/
+
+    .about-image {
+        width: 40%;
+        order: 2;
+    }
+
+    /*========= Resume Intro Responsive ========*/
+
+
+    /*========= Resume Body Responsive ========*/
+
+    .btn {
+        padding: 0 25px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .qualification-content::after {
+        left: -2px;
+    }
+
+    .qualification-content::before {
+        left: 0;
+    }
+
+    .bar-content {
+        margin-bottom: 0;
+    }
+
+    /*========== Services Responsive =========*/
+
+
+    /* ========= Projects Responsive =========== */
+
+
+    /*======= Portfolio Gallery Responsive =====*/
+
+
+    /*============ Contact General Responsive ==========*/
+
+
+    /* ======= Contact Form Responsive ======== */
+
+    #contact-form {
+        margin: 2rem auto;
+        width: 80%;
+    }
+
+    /* ======= Footer Responsive ======== */
+
+
+    /*========== Theme Icon Color When Nabar Sticky ========*/
+
+    .theme-toggle {
+        background: none;
+        position: static;
+        transform: none;
+    }
+
+    body:not(.dark) .header-sticky .theme-toggle .lni-night,
+    body.dark .header-sticky .theme-toggle .lni-sun {
+        color: #3e4455;
+    }
+
+    body:not(.dark) .theme-toggle .lni-night,
+    body.dark .theme-toggle .lni-sun {
+        color: var(--color2);
+    }
+}
