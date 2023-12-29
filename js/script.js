@@ -143,7 +143,7 @@ window.onload = function () {
         function (error) {
           document.querySelector(".loader").classList.toggle("show");
           msg.classList.add("show");
-          msg.innerHTML += "<span class='error-msg'>Email Not Sent</span>";
+          msg.innerHTML += "<span class='error-msg'>Not Sent ! Sign Up with EmailJS.</span>";
         }
       );
     });
