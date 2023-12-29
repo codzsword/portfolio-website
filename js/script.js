@@ -121,7 +121,7 @@ const msg = document.querySelector(".form-message");
 
 (function () {
   // https://dashboard.emailjs.com/admin/account
-  emailjs.init("LootWPFv2RfrO_c8w");
+  emailjs.init("YOUR_PUBLIC_KEY");
 })();
 
 window.onload = function () {
@@ -130,8 +130,8 @@ window.onload = function () {
     .addEventListener("submit", function (event) {
       event.preventDefault();
       document.querySelector(".loader").classList.add("show");
-      // these IDs from the previous steps
-      emailjs.sendForm("service_i0u2m5r", "template_9rkt0io", this).then(
+      // Replace With Your Email Service ID & Contact Form ID Which You Will Get After Registering With EmailJs
+      emailjs.sendForm("YOUR_CONTACT_SERVICE_ID", "YOUR_CONTACT_FORM_ID", this).then(
         function () {
           document.getElementById("contact-form").reset();
           document.querySelector(".loader").classList.remove("show");
